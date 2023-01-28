@@ -1,0 +1,11 @@
+services:
+  musicbee:
+    image: musicbee-docker:0.1
+    container_name: musicbee
+    ports:
+      - 3000:3000
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
+    restart: unless-stopped
