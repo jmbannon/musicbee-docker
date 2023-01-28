@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bash
+
+# if not installed
+[[ ! -e /config/MusicBee/MusicBee.exe ]] && \
+    tar -xzf /install/musicbee_portable.tar.gz -C /config
+
+# permissions
+chown -R abc:abc \
+    /config
+
+# install winetricks
+# su - abc -c "winetricks corefonts"
+

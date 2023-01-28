@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=MusicBee
+Comment=MusicBee Music Player
+Path=/config
+Exec=wine MusicBee.exe
+Icon=wine
+Terminal=true

@@ -8,10 +8,6 @@ RUN echo "Beginning build" && \
     su -c "echo \"Include = /etc/pacman.d/mirrorlist\" >> /etc/pacman.conf" && \
     pacman -Syu --noconfirm && \
     # Install packages
-    pacman -S --noconfirm git vim nano wine winetricks lib32-libpulse wine-mono p7zip && \
-    # Install winetricks
-    winetricks corefonts && \
-    # Unzip musicbee install
-    chown abc:abc /install
+    pacman -S --noconfirm git vim nano wine winetricks lib32-libpulse wine-mono p7zip
 
 VOLUME /config
