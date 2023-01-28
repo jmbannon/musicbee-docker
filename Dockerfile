@@ -1,5 +1,6 @@
 from linuxserver/webtop:arch-xfce-version-2023-01-27
 
+COPY root/ /
 RUN echo "Beginning build" && \
     # Add multilib
     su -c "echo \"\" >> /etc/pacman.conf" && \
@@ -10,14 +11,10 @@ RUN echo "Beginning build" && \
     # Install packages
     pacman -S --noconfirm git vim nano wine winetricks lib32-libpulse wine-mono p7zip && \
 
-    # Create tmp build dir
-    mkdir /install && \
+    # Unzip musicbee install
     chown abc:abc /install && \
     cd /install && \
-
-    # Build musicbee in it
-    su abc -c "git clone \"https://aur.archlinux.org/musicbee.git\"" && \
-    cd musicbee && \
-    su abc -c "makepkg"
+    unzip MusicBee*.zip && \
+    rm MusicBee*.zip
 
 VOLUME /config
