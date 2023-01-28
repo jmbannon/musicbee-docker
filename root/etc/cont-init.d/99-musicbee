@@ -1,0 +1,22 @@
+#!/usr/bin/with-contenv bash
+
+# if not installed
+[[ ! -e /config/MusicBee/MusicBee.exe ]] && \
+    tar -xzf /install/musicbee_portable.tar.gz -C /config
+
+    mkdir -p /config/.local/share/icons/hicolor/256x256/apps
+    cp /install/musicbee.png /config/.local/share/icons/hicolor/256x256/apps
+
+    mkdir -p /config/.local/share/applications
+    cp /install/musicbee.desktop /config/.local/share/applications
+
+    mkdir -p /etc/xdg/autostart
+    cp /install/musicbee.desktop /etc/xdg/autostart
+
+# permissions
+chown -R abc:abc \
+    /config
+
+# install winetricks
+# su - abc -c "winetricks corefonts"
+
