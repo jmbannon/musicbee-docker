@@ -9,13 +9,11 @@ RUN echo "Beginning build" && \
     pacman -Syu --noconfirm && \
     # Install packages
     pacman -S --noconfirm git vim nano wine winetricks lib32-libpulse wine-mono p7zip && \
-    # Install Segoe font (default MusicBee font)
-    git clone https://aur.archlinux.org/ttf-segoe-ui-variable.git && \
+    # Install Selawik font
+    git clone https://aur.archlinux.org/ttf-selawik.git && \
     sudo chown abc:abc /config && \
-    ls -lh && \
-    pwd && \
-    sudo chown abc:abc /ttf-segoe-ui-variable && \
-    su - abc -c "cd /ttf-segoe-ui-variable && makepkg --install --noconfirm" && \
-    rm -rf /tff-segoe-ui-variable
+    sudo chown abc:abc /ttf-selawik && \
+    su - abc -c "cd /ttf-selawik && makepkg --install --noconfirm" && \
+    rm -rf /tff-selawik
 
 VOLUME /config
