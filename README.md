@@ -54,11 +54,15 @@ Assuming you mounted to `/music`, Wine will configure the `Z:/` drive to point t
 
 ## Issues and Work-Arounds
 #### Changing Fonts
-Changing Fonts within MusicBee doesn't work. You can work around this by closing MusicBee and modifying the settings file. This command will replace all fonts with `Selawik` (recommended).
-
+Changing Fonts within MusicBee doesn't work. You can work around this by
+1. Check the `Custom Font` checkbox for all fonts in `Preferences -> Layout (1)`. Take note of the font sizes
+2. Close MusicBee
+3. Modify the settings file using the following command, which replaces all fonts with `Selawik` (recommended, looks identical to the default Segoe font in Windows).
 ```bash
 sed -i 's/<FontFamily>\(.*\)<\/FontFamily>/<FontFamily>Selawik<\/FontFamily>/g' /config/MusicBee/AppData/MusicBee3Settings.ini
 ```
+4. (Optional) Modify font sizes to your liking within the settings file. MusicBee must be closed when changing values.
+
 #### Updating MusicBee
 Since this is relatively new, I haven't had to update yet. A proper solution will be implemented at a later time.
 
