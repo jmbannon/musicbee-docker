@@ -1,7 +1,16 @@
 # musicbee-docker
 ## Run MusicBee in Docker for browser usage
 
-`musicbee-docker` installs MusicBee via Wine in a webtop container running Arch Linux, and is accessible in browser using Guacamole.
+`musicbee-docker` installs an runs
+[MusicBee](https://www.getmusicbee.com/)
+via
+[Wine](https://www.winehq.org/)
+in a
+[webtop container](https://docs.linuxserver.io/images/docker-webtop)
+running
+[Arch Linux](https://archlinux.org/),
+and is accessible in browser using
+[Guacamole](https://guacamole.apache.org/).
 
 ![image](https://user-images.githubusercontent.com/10107080/215308172-1c91aa40-b97a-4163-8716-fd333d07bda5.png)
 
