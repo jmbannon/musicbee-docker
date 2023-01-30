@@ -1,7 +1,7 @@
 # musicbee-docker
 ## Run MusicBee in Docker for browser usage
 
-`musicbee-docker` installs an runs
+`musicbee-docker` installs and runs
 [MusicBee](https://www.getmusicbee.com/)
 via
 [Wine](https://www.winehq.org/)
