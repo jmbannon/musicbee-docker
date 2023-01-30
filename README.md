@@ -70,3 +70,7 @@ Since this is relatively new, I haven't had to update yet. A proper solution wil
 - Cannot drag-and-drop tabs
 - Japanese characters do not display
 
+## Support
+Keep in mind that most issues will stem from Wine. Feel free to join our
+[Discord](https://discord.gg/qV3p8gzP)
+for support or discussion on how we can make this app better.
