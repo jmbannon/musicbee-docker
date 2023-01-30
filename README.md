@@ -63,6 +63,9 @@ sed -i 's/<FontFamily>\(.*\)<\/FontFamily>/<FontFamily>Selawik<\/FontFamily>/g' 
 ```
 4. (Optional) Modify font sizes to your liking within the settings file. MusicBee must be closed when changing values.
 
+#### Saving Preferences and Settings
+Some preferences/settings are not saved to file until MusicBee is closed. It is recommended to close and reopen MusicBee once in a while to ensure your changes are properly saved in case Wine crashes.
+
 #### Updating MusicBee
 Since this is relatively new, I haven't had to update yet. A proper solution will be implemented at a later time.
 
