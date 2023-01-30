@@ -26,7 +26,7 @@ and is accessible in browser using
 ```yaml
 services:
   musicbee:
-    image: ghcr.io/jmbannon/musicbee-docker:3.4.8033-beta.3
+    image: ghcr.io/jmbannon/musicbee-docker:3.4.8033-beta.4
     container_name: musicbee
     ports:
       - 3000:3000
