@@ -1,19 +1,17 @@
-from linuxserver/webtop:arch-xfce-version-2023-01-27
+from ghcr.io/linuxserver/webtop:ubuntu-xfce-version-79d8af51
 
 COPY root/ /
 RUN echo "Beginning build" && \
-    # Add multilib
-    su -c "echo \"\" >> /etc/pacman.conf" && \
-    su -c "echo \"[multilib]\" >> /etc/pacman.conf" && \
-    su -c "echo \"Include = /etc/pacman.d/mirrorlist\" >> /etc/pacman.conf" && \
-    pacman -Syu --noconfirm && \
+    # Add Wine repo
+    cat /etc/os-release && \
     # Install packages
-    pacman -S --noconfirm git vim nano wine winetricks lib32-libpulse wine-mono p7zip && \
-    # Install Selawik font
-    git clone https://aur.archlinux.org/ttf-selawik.git && \
-    sudo chown abc:abc /config && \
-    sudo chown abc:abc /ttf-selawik && \
-    su - abc -c "cd /ttf-selawik && makepkg --install --noconfirm" && \
-    rm -rf /tff-selawik
+    sudo apt-get update && \
+    sudo apt-get install -y wget git vim nano && \
+    sudo dpkg --add-architecture i386 && \
+    sudo mkdir -pm755 /etc/apt/keyrings && \
+    sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key && \
+    sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources && \
+    sudo apt-get update && \
+    sudo apt-get install --install-recommends -y winehq-stable
 
 VOLUME /config

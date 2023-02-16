@@ -1,11 +1,15 @@
 services:
   musicbee:
-    image: musicbee-docker:0.1
+    image: musicbee-docker:local
     container_name: musicbee
     ports:
       - 3000:3000
+    security_opt:
+      - seccomp:unconfined # required
+    shm_size: "2gb" # optional, but recommended
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Los_Angeles
+      - TITLE=MusicBee
     restart: unless-stopped
